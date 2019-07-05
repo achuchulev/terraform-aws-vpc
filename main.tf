@@ -11,6 +11,10 @@ resource "aws_subnet" "vpc_subnet" {
   vpc_id                  = "${aws_vpc.new_vpc.id}"
   map_public_ip_on_launch = true
   cidr_block              = "${var.vpc_subnet_cidr_blocks[count.index]}"
+
+  tags {
+    Name = "${aws_vpc.new_vpc.tags.Name}"
+  }
 }
 
 # Create Internet GW for VPC resource
@@ -18,7 +22,7 @@ resource "aws_internet_gateway" "vpc_internet_gw" {
   vpc_id = "${aws_vpc.new_vpc.id}"
 
   tags {
-    Name = "Internet Gateway for VPC"
+    Name = "Internet Gateway for ${aws_vpc.new_vpc.tags.Name}"
   }
 }
 
