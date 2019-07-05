@@ -22,7 +22,7 @@ resource "aws_internet_gateway" "vpc_internet_gw" {
   vpc_id = "${aws_vpc.new_vpc.id}"
 
   tags {
-    Name = "Internet Gateway for ${aws_vpc.new_vpc.tags.Name}"
+    Name = "Internet Gateway for VPC ${aws_vpc.new_vpc.tags.Name}"
   }
 }
 
