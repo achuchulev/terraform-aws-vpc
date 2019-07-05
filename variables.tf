@@ -20,7 +20,6 @@ variable "vpc_tags" {
   description = "VPC tag"
 
   default = {
-    Site = ""
     Name = ""
   }
 }
