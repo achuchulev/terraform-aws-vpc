@@ -11,7 +11,7 @@
 - Get the repo
 
 ```
-https://github.com/achuchulev/terraform-aws-vpc.git
+git clone https://github.com/achuchulev/terraform-aws-vpc.git
 cd terraform-aws-vpc
 ```
 
