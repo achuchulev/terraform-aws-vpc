@@ -1,8 +1,11 @@
-variable "aws_access_key" {}
+variable "aws_access_key" {
+}
 
-variable "aws_secret_key" {}
+variable "aws_secret_key" {
+}
 
-variable "aws_region" {}
+variable "aws_region" {
+}
 
 variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
@@ -10,13 +13,13 @@ variable "vpc_cidr_block" {
 }
 
 variable "vpc_subnet_cidr_blocks" {
-  type        = "list"
+  type        = list(string)
   default     = ["10.0.0.0/16"]
   description = "VPC subnet cidr blocks"
 }
 
 variable "vpc_tags" {
-  type        = "map"
+  type        = map(string)
   description = "VPC tag"
 
   default = {
@@ -35,3 +38,4 @@ variable "ssh_cidr" {
 variable "icmp_cidr" {
   default = "0.0.0.0/0"
 }
+
