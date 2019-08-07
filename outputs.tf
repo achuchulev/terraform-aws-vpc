@@ -13,6 +13,10 @@ output "subnet_ids" {
   value = aws_subnet.vpc_subnet.*.id
 }
 
+output "azs" {
+  value = aws_subnet.vpc_subnet.*.availability_zone
+}
+
 # Count route tables per VPC
 output "route_tables_count" {
   value = length(distinct(data.aws_route_tables.route_tables.ids))
